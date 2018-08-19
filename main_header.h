@@ -19,8 +19,8 @@
 
 #define ROUNDING(x, dig) ( floor((x) * pow(float(10), dig) + 0.5f) / pow(float(10), dig) )
 
-void clear_lines(int y, int strlength);
-void print_start_screen();
-void main_print(int case_print);
+void clear_lines(int y, int strlength); // y줄에서 stregth길이 만큼 글자가 삭제됩니다!
+void print_start_screen(); // 첫 화면 출력 ( 처음만 사용할 듯)
+void main_print(int case_print); // 메인 화면 출력
 
 #endif

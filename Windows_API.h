@@ -1,6 +1,8 @@
 #pragma once
 
 // windows api를 담은(색 변경, 커서 위치 이동 등) 헤더파일
+// Windows (Microsoft사 OS) 에서만 사용가능합니다. 아닌 경우에는 이 부분을 지우시기 바랍니다.
+// Windows 운영체제가 아니면 사실상 사용은 포기하시는 것이 여러분들의 건강에 좋으실것입니다?
 
 #ifndef __WINDOW_API_H_KGW__
 #define __WINDOW_API_H_KGW__
