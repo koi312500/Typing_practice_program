@@ -16,12 +16,14 @@
 
 int main() {
 	// 처음 시작이랍니다.
-	system("mode con: lines=31 cols=90");
+	//system("mode con: lines=31 cols=90");
 	system("title typing_program");
 	//PlaySound(TEXT("Sleep-Away.wav"), NULL, SND_ASYNC | SND_LOOP);// 실제 프로그램 사용 시 제외하고 주석 제거 금지! (배경음악이랍니다!)
 	print_start_screen();
 	system("cls");
 	main_print(1);
+	system("PAUSE");
+	return 0;
 }
 
 

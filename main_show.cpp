@@ -1,6 +1,8 @@
 #include "main_header.h"
 
 void main_print(int case_print) {
+
+	/* // main templates of this function
 	printf("     ┏━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n");
 	printf("     ┃                        ┃                         ┃    자주 사용하는 긴 글   ┃\n");
 	printf("     ┃ 자주 사용하는 낱말 연습┃      자주 쓰는 문구     ┃     또는  유명한 문학    ┃\n");
@@ -10,26 +12,61 @@ void main_print(int case_print) {
 	printf("     ┃                                                                             ┃\n");
 	printf("     ┃                                                                             ┃\n");
 	printf("     ┣━━━━━━━━━━━━━━━━━━━━━┓                                                       ┃\n");
-	printf("     ┃                     ┃                                                       ┃\n");
-	printf("     ┃                     ┃                                                       ┃\n");
-	printf("     ┃                     ┃                                                       ┃\n");
-	printf("     ┃                     ┃                                                       ┃\n");
-	printf("     ┃                     ┃                                                       ┃\n");
-	printf("     ┃                     ┃                                                       ┃\n");
-	printf("     ┃                     ┃                                                       ┃\n");
-	printf("     ┃                     ┃                                                       ┃\n");
-	printf("     ┃                     ┃                                                       ┃\n");
-	printf("     ┃                     ┃                                                       ┃\n");
-	printf("     ┃                     ┃                                                       ┃\n");
-	printf("     ┃                     ┃                                                       ┃\n");
-	printf("     ┃                     ┃                                                       ┃\n");
-	printf("     ┃                     ┃                                                       ┃\n");
-	printf("     ┃                     ┃                                                       ┃\n");
-	printf("     ┃                     ┃                                                       ┃\n");
+	printf("     ┃                        ┃                                                       ┃\n");
+	printf("     ┃	 현제 선택한 메뉴      ┃                                                       ┃\n");
+	printf("     ┃                        ┃                                                       ┃\n");
+	printf("     ┃                        ┃                                                       ┃\n");
+	printf("     ┃   ~~~~~~~~~~~~~~~~     ┃                                                       ┃\n");
+	printf("     ┃                        ┃                                                       ┃\n");
+	printf("     ┃                        ┃                                                       ┃\n");
+	printf("     ┃                        ┃                                                       ┃\n");
+	printf("     ┃                        ┃                                                       ┃\n");
+	printf("     ┃                        ┃                                                       ┃\n");
+	printf("     ┃                        ┃                                                       ┃\n");
+	printf("     ┃                        ┃                                                       ┃\n");
+	printf("     ┃                        ┃                                                       ┃\n");
+	printf("     ┃                        ┃                                                       ┃\n");
+	printf("     ┃                        ┃                                                       ┃\n");
+	printf("     ┃                        ┃                                                       ┃\n");
 	printf("     ┣━━━━━━━━━━━━━━━━━━━━━┛                                                        ┃\n");
 	printf("     ┃                                                                             ┃\n");
 	printf("     ┃                                                                             ┃\n");
 	printf("     ┃                                                                             ┃\n");
 	printf("     ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n");
-	Sleep(50000);
+	*/
+	switch (case_print) {
+		case 1:
+			printf("     ┏━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓\n");
+			printf("     ┃                        ┃                         ┃    자주 사용하는 긴 글   ┃\n");
+			printf("     ┃ 자주 사용하는 낱말 연습┃      자주 쓰는 문구     ┃     또는  유명한 문학    ┃\n");
+			printf("     ┃                        ┃                         ┃                          ┃\n");
+			printf("     ┣━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━━━━━┫\n");
+			printf("     ┃                                                                             ┃\n");
+			printf("     ┃                                                                             ┃\n");
+			printf("     ┃                                                                             ┃\n");
+			printf("     ┣━━━━━━━━━━━━━━━━━━━━━━━━┓                                                    ┃\n");
+			printf("     ┃                        ┃                                                    ┃\n");
+			printf("     ┃	 현제 선택한 메뉴는   ┃                                                    ┃\n");
+			printf("     ┃                        ┃                                                    ┃\n");
+			printf("     ┃                        ┃                                                    ┃\n");
+			printf("     ┃ 자주 사용하는 낱말 연습┃                                                    ┃\n");
+			printf("     ┃                        ┃                                                    ┃\n");
+			printf("     ┃         입니다.        ┃                                                    ┃\n");
+			printf("     ┃                        ┃                                                    ┃\n");
+			printf("     ┣━━━━━━━━━━━━━━━━━━━━━━━━┫                                                    ┃\n");
+			printf("     ┃        메뉴설명        ┃                                                    ┃\n");
+			printf("     ┃ 여러분들이 자주 사용하                       ┃                                                    ┃\n");
+			printf("     ┃                        ┃                                                    ┃\n");
+			printf("     ┃                        ┃                                                    ┃\n");
+			printf("     ┃                        ┃                                                    ┃\n");
+			printf("     ┃                        ┃                                                    ┃\n");
+			printf("     ┃                        ┃                                                    ┃\n");
+			printf("     ┣━━━━━━━━━━━━━━━━━━━━━━━━┛                                                    ┃\n");
+			printf("     ┃                                                                             ┃\n");
+			printf("     ┃                                                                             ┃\n");
+			printf("     ┃                                                                             ┃\n");
+			printf("     ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n");
+			break;
+	}
+
 }
