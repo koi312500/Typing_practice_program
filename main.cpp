@@ -1,28 +1,38 @@
 /* KOR - instruction // 한국어 설명
 // 모든 소스코드의 중심이 되는 소스코드입니다.
-// 최종 수정 날짜 : 2018.08.15  /// 개발자 : gunwoo7
+// 최종 수정 날짜 : 2018.09.23  /// 개발자 : gunwoo7
 // 이 프로그램은 Github를 사용하여 관리됩니다. (버전 관리를 위해서)
 // main.cpp에만 영어 매뉴얼이 있습니다 (추후 추가 될 예정입니다)
 */
 
 /* ENG - instruction // 영어 설명
 // It's the source code that is the center of all the source codes.
-// Date of last modification: 2018.08.15 /// Developer : gunwoo7
+// Date of last modification: 2018.09.23 /// Developer : gunwoo7
 // This program is managed using Github. (for version management)
 // This is the only English manual (It will be added later)
 */
 
 #include "main_header.h"
 
+/*
+int main() {
+	// 임시 테스트용 코드
+	system("mode con: lines=31 cols=90");
+	error();
+	printf("check");
+	Sleep(100);
+	return 0;
+} 
+*/
+
 int main() {
 	// 처음 시작이랍니다.
-	//system("mode con: lines=31 cols=90");
+	system("mode con: lines=31 cols=90");
 	system("title typing_program");
-	//PlaySound(TEXT("Sleep-Away.wav"), NULL, SND_ASYNC | SND_LOOP);// 실제 프로그램 사용 시 제외하고 주석 제거 금지! (배경음악이랍니다!)
+	PlaySound(TEXT("Sleep-Away.wav"), NULL, SND_ASYNC | SND_LOOP);// 실제 프로그램 사용 시 제외하고 주석 제거 금지! (배경음악이랍니다!)
 	print_start_screen();
 	system("cls");
-	main_print(1);
-	system("PAUSE");
+	select_main();
 	return 0;
 }
 
@@ -47,4 +57,3 @@ mciSendString("play mp3 from 0 wait", NULL, 0, NULL);
 To play the *.mp3 and replay it every time it ends like a loop:
 mciSendString("play mp3 repeat", NULL, 0, NULL);
 */
-
