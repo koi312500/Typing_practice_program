@@ -12,30 +12,20 @@
 // This is the only English manual (It will be added later)
 */
 
-#include "main_header.h"
-
-/*
-int main() {
-	// 임시 테스트용 코드
-	system("mode con: lines=31 cols=90");
-	error();
-	printf("check");
-	Sleep(100);
-	return 0;
-} 
-*/
+#include "main_headfile.h" //  헤더파일 선언문 헤더 파일
+#include "main_function.h" //  함수 선언문 헤더 파일
 
 int main() {
 	// 처음 시작이랍니다.
 	system("mode con: lines=31 cols=90");
 	system("title typing_program");
-	PlaySound(TEXT("Sleep-Away.wav"), NULL, SND_ASYNC | SND_LOOP);// 실제 프로그램 사용 시 제외하고 주석 제거 금지! (배경음악이랍니다!)
+	CursorView(0);
+	PlaySound(TEXT("main_bgm1.wav"), NULL, SND_ASYNC | SND_LOOP);// 실제 프로그램 사용 시 제외하고 주석 제거 금지! (배경음악이랍니다!)
 	print_start_screen();
 	system("cls");
 	select_main();
 	return 0;
 }
-
 
 /*
 abcdefghijk

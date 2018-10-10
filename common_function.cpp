@@ -1,8 +1,15 @@
-#include "main_header.h"
+#include "main_headfile.h" //  헤더파일 선언문 헤더 파일
+#include "main_function.h" //  함수 선언문 헤더 파일
 
+// 공통적으로 사용되거나 따로 분류할 수 없는 함수를 모아둔 곳입니다.
+
+int random(int range) {
+	srand(time(NULL) * time(NULL) * time(NULL));
+	return rand() % range;
+}
 int keyboard_input() { // 키보드 처리 받기
 	int key = getch();
-	if (key == 10) return 0;
+	if (key == 13) return 0;
 	else if (key == 224) { // 화살표는 2바이트 확장 코드이다.
 		key = getch();
 
@@ -25,6 +32,7 @@ int keyboard_input() { // 키보드 처리 받기
 }
 
 void error() {
+	system("cls");
 	printf("오류가 발생하였습니다. (error 함수 실행) \n");
 	Sleep(700);
 	printf("소스코드 또는 입력하신 결과에 문제가 있습니다.\n");

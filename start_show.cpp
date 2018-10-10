@@ -1,19 +1,18 @@
-#include "main_header.h"
-#include "Windows_API.h"
+#include "main_headfile.h" //  헤더파일 선언문 헤더 파일
+#include "main_function.h" //  함수 선언문 헤더 파일
 
+// 시작화면의 출력을 담당하고 있습니다.(라고 쓰고 처리까지 담당한다고 읽습니다.)
 
 void clear_lines(int y, int strlength) {
 	int i;
 
-	Con::gotoxy(0, y);
+	gotoxy(0, y);
 	for (i = 0; i < strlength; i++) {
 		printf(" ");
 	}
 }
 
 void print_start_screen() {
-	using namespace Con;
-	CursorView(0);
 
 	int i;
 	int space_x, space_y;
