@@ -10,14 +10,14 @@
 
 
 
-void SetColor(int color, int bgcolor)
+void SetColor(int color, int bgcolor) // 색갈 변경
 {
 	color &= 0xf;
 	bgcolor &= 0xf;
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (bgcolor << 4) | color);
 }
 
-void gotoxy(short x, short y) {
+void gotoxy(short x, short y) { // 커서 위치 이동
 	COORD Cur;
 	Cur.X = x;
 	Cur.Y = y;

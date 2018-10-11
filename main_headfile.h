@@ -8,8 +8,8 @@
 #ifndef __MAIN_HEADFILE_H_KGW__
 #define __MAIN_HEADFILE_H_KGW__
 
-#define _CRT_SECURE_NO_WARNINGS
-#include <cstdio>
+#define _CRT_SECURE_NO_WARNINGS // vc2017에서 scanf, printf 를 warning 없이 사용하도록
+#include <cstdio> // 헤더 파일 선언
 #include <cstring>
 #include <stdlib.h>
 #include <time.h>
@@ -18,6 +18,6 @@
 #include <windows.h>
 #include <mmsystem.h>
 #include <conio.h>
-#pragma comment(lib, "winmm.lib")
+#pragma comment(lib, "winmm.lib") // PlaySound() 함수 사용을 위해
 
 #endif

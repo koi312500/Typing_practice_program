@@ -3,7 +3,7 @@
 
 // 시작화면의 출력을 담당하고 있습니다.(라고 쓰고 처리까지 담당한다고 읽습니다.)
 
-void clear_lines(int y, int strlength) {
+void clear_lines(int y, int strlength) { // y번째 줄을 strlength 길이를 삭제
 	int i;
 
 	gotoxy(0, y);
@@ -12,10 +12,10 @@ void clear_lines(int y, int strlength) {
 	}
 }
 
-void print_start_screen() {
+void print_start_screen() { // 시작 화면 출력
 
 	int i;
-	int space_x, space_y;
+	int space_x, space_y; // 띄어쓰기 공간
 	space_x = 7;
 	space_y = 1;
 
@@ -51,7 +51,7 @@ void print_start_screen() {
 
 		for (i = 0; i < 24; i++) {
 			int time_now = time(NULL);
-			while (time(NULL) - time_now == 0 && !kbhit());
+			while (time(NULL) - time_now == 0 && !kbhit()); // 1초가 지나가지 않거나 키보드가 눌리지 않았을 때 까지
 			if (time(NULL) - time_now == 0) return;
 			clear_lines(i + space_y, 58 + space_x * 2);
 		}

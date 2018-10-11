@@ -4,8 +4,8 @@
 // 공통적으로 사용되거나 따로 분류할 수 없는 함수를 모아둔 곳입니다.
 
 int random(int range) {
-	srand(time(NULL) * time(NULL) * time(NULL));
-	return rand() % range;
+	srand(time(NULL) * time(NULL) * time(NULL)); // Seed 값을  설정
+	return rand() % range; // range로 나눈 다음 나머지를 반환
 }
 int keyboard_input() { // 키보드 처리 받기
 	int key = getch();
@@ -41,13 +41,15 @@ void error() {
 	Sleep(700);
 	printf("아닐 경우 개발자에게 연락을 해 주십시오.\n");
 	Sleep(700);
-	printf("개발자 이메일 : ---- \n"); // --- 부분은 이메일을 입력하는 곳
+	printf("개발자 주소 : kgw2007.cf \n"); // 주소 부분은 알아서 변경
+	Sleep(700);
+	printf("개발자 이메일 : b9635005@naver.com\n");
 	Sleep(700);
 	printf("입력한 것도 같이 알려주시면 해결하기 쉽습니다.\n");
 	Sleep(700);
 	printf("4초 후 아무키나 입력하시면 종료됩니다.\n");
 	Sleep(4000);
-	system("PAUSE");
-	_Exit (EXIT_FAILURE);
+	system("PAUSE"); // 잠시 기다리고
+	_Exit (EXIT_FAILURE); // 강제 종료
 	
 }
