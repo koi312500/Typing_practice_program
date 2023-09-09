@@ -138,9 +138,7 @@ void short_sentence_practice() {
 void Introduction_of_this_program() { // 프로그램 설명 
 	PlaySound(TEXT("data/song/main_bgm2.wav"), NULL, SND_ASYNC | SND_LOOP); // main_bgm2.wav 틀기
 	system("cls");
-	printf("안녕하세요. 개발자 김건우입니다.\n");
-	Sleep(700);
-	printf("이 프로그램은 대전 정보영재 초급 개인주제 발표대회용 프로그램 입니다.\n");
+	printf("안녕하세요. 개발자 KOI3125입니다.\n");
 	Sleep(700);
 	printf("이 프로그램은 단순명료한 타자연습 프로그램입니다. \n");
 	Sleep(700);
@@ -148,7 +146,7 @@ void Introduction_of_this_program() { // 프로그램 설명
 	Sleep(700);
 	printf("알고 싶으시면 단순명료한 타자연습 프로그램 사이트로 오십시오.\n");
 	Sleep(700);
-	printf("단순명료한 타자연습 프로그램 사이트 : kgw2007.cf\n");
+	printf("단순명료한 타자연습 프로그램 사이트 : https://koi312500.github.io/typing_program/\n");
 	Sleep(700);
 	printf("이 글은 15초 후에 지워지고 메인화면으로 이동합니다.\n");
 	Sleep(15000);
