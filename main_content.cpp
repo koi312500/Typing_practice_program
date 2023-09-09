@@ -146,7 +146,7 @@ void Introduction_of_this_program() { // 프로그램 설명
 	Sleep(700);
 	printf("알고 싶으시면 단순명료한 타자연습 프로그램 사이트로 오십시오.\n");
 	Sleep(700);
-	printf("단순명료한 타자연습 프로그램 사이트 : https://koi312500.github.io/typing_program/\n");
+	printf("단순명료한 타자연습 프로그램 사이트 : https://koi312500.github.io/Typing_practice_program/\n");
 	Sleep(700);
 	printf("이 글은 15초 후에 지워지고 메인화면으로 이동합니다.\n");
 	Sleep(15000);

@@ -33,7 +33,7 @@ int keyboard_input() { // 키보드 처리 받기
 
 void error() {
 	system("cls");
-	printf("오류가 발생하였습니다. (error 함수 실행) \n");
+	printf("오류가 발생하였습니다. (error 함수 호출됨.) \n");
 	Sleep(700);
 	printf("소스코드 또는 입력하신 결과에 문제가 있습니다.\n");
 	Sleep(700);
@@ -41,9 +41,9 @@ void error() {
 	Sleep(700);
 	printf("아닐 경우 개발자에게 연락을 해 주십시오.\n");
 	Sleep(700);
-	printf("개발자 주소 : kgw2007.cf \n"); // 주소 부분은 알아서 변경
+	printf("개발자 주소 : https://koi312500.github.io/Typing_practice_program/\n"); // 주소 부분은 알아서 변경
 	Sleep(700);
-	printf("개발자 이메일 : b9635005@naver.com\n");
+	printf("개발자 연락처 : Discord @koi3125, Email koi312500@gmail.com\n");
 	Sleep(700);
 	printf("입력한 것도 같이 알려주시면 해결하기 쉽습니다.\n");
 	Sleep(700);

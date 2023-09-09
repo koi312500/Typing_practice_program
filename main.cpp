@@ -1,15 +1,15 @@
 /* KOR - instruction // 한국어 설명
 // 모든 소스코드의 중심이 되는 소스코드입니다.
-// 최종 수정 날짜 : 2018.09.23  /// 개발자 : gunwoo7
-// 이 프로그램은 Github를 사용하여 관리됩니다. (버전 관리를 위해서)
-// main.cpp에만 영어 매뉴얼이 있습니다 (추후 추가 될 예정입니다)
+// 최종 수정 날짜 : 2023.09.09  /// 개발자 : koi312500
+// 이 프로그램은 Github를 사용하여 관리됩니다.
+// main.cpp에만 영어 매뉴얼이 있습니다 (다른 코드에 추가할 예정이 없습니다.)
 */
 
 /* ENG - instruction // 영어 설명
 // It's the source code that is the center of all the source codes.
-// Date of last modification: 2018.09.23 /// Developer : gunwoo7
-// This program is managed using Github. (for version management)
-// This is the only English manual (It will be added later)
+// Date of last modification: 2023.09.09 /// Developer : gunwoo7
+// This program is managed using Github.
+// This is the only English manual (There are no plans to add any other code.)
 */
 
 #include "main_headfile.h" //  헤더파일 선언문 헤더 파일
