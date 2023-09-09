@@ -2,7 +2,8 @@
 #### This is a Korean typing practice program.
 
 Site's location is https://koi312500.github.io/Typing_practice_program/.
-This project is now archived.
+
+This project is now archived from 2023-09-09 at KST(GMT + 9).
 
 If you want to ask about my code or contact, Please Contact to me at [Discord @koi3125](https://discord.com/users/753625063357546556).
 
