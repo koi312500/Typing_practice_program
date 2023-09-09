@@ -1,26 +1,26 @@
 #pragma once
 
-// ¸ğµç ¼Ò½ºÄÚµå¿¡ ÀÌ Çì´õÆÄÀÏÀ» »ç¿ëÇÕ´Ï´Ù.
-// ¸ğµç ¼Ò½ºÄÚµåÀÇ Ã¹ ÁÙ¿¡ ÀÌ ÄÚµå¸¦ ³Ö¾î¾ß ÇÕ´Ï´Ù. -> #include "main_headfile.h"
-// ¸ğµç ¼Ò½ºÄÚµåÀÇ µÎ¹øÂ° ÁÙ¿¡ ÀÌÄÚµå¸¦ ³Ö¾î¾ß ÇÕ´Ï´Ù. -> #include "main_function.h"
-// ¸ğµç ÇÔ¼öÀÇ ¼±¾ğ¹®ÀÌ ¿©±â¿¡ ÀÖ½À´Ï´Ù. 
+// ëª¨ë“  ì†ŒìŠ¤ì½”ë“œì— ì´ í—¤ë”íŒŒì¼ì„ ì‚¬ìš©í•©ë‹ˆë‹¤.
+// ëª¨ë“  ì†ŒìŠ¤ì½”ë“œì˜ ì²« ì¤„ì— ì´ ì½”ë“œë¥¼ ë„£ì–´ì•¼ í•©ë‹ˆë‹¤. -> #include "main_headfile.h"
+// ëª¨ë“  ì†ŒìŠ¤ì½”ë“œì˜ ë‘ë²ˆì§¸ ì¤„ì— ì´ì½”ë“œë¥¼ ë„£ì–´ì•¼ í•©ë‹ˆë‹¤. -> #include "main_function.h"
+// ëª¨ë“  í•¨ìˆ˜ì˜ ì„ ì–¸ë¬¸ì´ ì—¬ê¸°ì— ìˆìŠµë‹ˆë‹¤. 
 
-#ifndef __MAIN_FUNCTION_H_KGW__
-#define __MAIN_FUNCTION_H_KGW__
+#ifndef __MAIN_FUNCTION_H_KOI__
+#define __MAIN_FUNCTION_H_KOI__
 
 #define ROUNDING(x, dig) ( floor((x) * pow(float(10), dig) + 0.5f) / pow(float(10), dig) )
 
-void SetColor(int color, int bgcolor); // »ö»ó ¸ÂÃß±â
-void gotoxy(short x, short y); // Ä¿¼­ À§Ä¡ ÀÌµ¿
-void CursorView(char show); // Ä¿¼­ º¸ÀÌ±â/¼û±â±â
-void clear_lines(int y, int strlength); // yÁÙ¿¡¼­ stregth±æÀÌ ¸¸Å­ ±ÛÀÚ°¡ »èÁ¦µË´Ï´Ù!
-void print_start_screen(); // Ã¹ È­¸é Ãâ·Â ( Ã³À½¸¸ »ç¿ëÇÒ µí)
-void main_print(int case_print); // ¸ŞÀÎÈ­¸éÀÇ ¼±ÅÃÈ­¸é Ãâ·Â¿¡ »ç¿ëµÇ´Â ÇÔ¼ö
-int select_main(); // ¸ŞÀÎÈ­¸éÀÇ ¼±ÅÃÈ­¸é Ã³¸®
-int keyboard_input(); // È­»ìÇ¥ Å°º¸µåÀÇ ÀÔ·ÂÀ» Ã³¸®ÇÕ´Ï´Ù.
-void error(); // ¿À·ù½ÃÀÇ ¸Ş´º¾ó°ú ÀÚµ¿Á¾·á¸¦ ÁøÇàÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
-void word_practice(); // ´Ü¾î ¿¬½À
-void short_sentence_practice(); // ¹®Àå ¿¬½À
-void Introduction_of_this_program(); // ÇÁ·Î±×·¥ ¼³¸í
-int random(int range); // ¹«ÀÛÀ§ °ªÀ» ³»´Â ÇÔ¼ö
+void SetColor(int color, int bgcolor); // ìƒ‰ìƒ ë§ì¶”ê¸°
+void gotoxy(short x, short y); // ì»¤ì„œ ìœ„ì¹˜ ì´ë™
+void CursorView(char show); // ì»¤ì„œ ë³´ì´ê¸°/ìˆ¨ê¸°ê¸°
+void clear_lines(int y, int strlength); // yì¤„ì—ì„œ stregthê¸¸ì´ ë§Œí¼ ê¸€ìê°€ ì‚­ì œë©ë‹ˆë‹¤!
+void print_start_screen(); // ì²« í™”ë©´ ì¶œë ¥ ( ì²˜ìŒë§Œ ì‚¬ìš©í•  ë“¯)
+void main_print(int case_print); // ë©”ì¸í™”ë©´ì˜ ì„ íƒí™”ë©´ ì¶œë ¥ì— ì‚¬ìš©ë˜ëŠ” í•¨ìˆ˜
+int select_main(); // ë©”ì¸í™”ë©´ì˜ ì„ íƒí™”ë©´ ì²˜ë¦¬
+int keyboard_input(); // í™”ì‚´í‘œ í‚¤ë³´ë“œì˜ ì…ë ¥ì„ ì²˜ë¦¬í•©ë‹ˆë‹¤.
+void error(); // ì˜¤ë¥˜ì‹œì˜ ë©”ë‰´ì–¼ê³¼ ìë™ì¢…ë£Œë¥¼ ì§„í–‰í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+void word_practice(); // ë‹¨ì–´ ì—°ìŠµ
+void short_sentence_practice(); // ë¬¸ì¥ ì—°ìŠµ
+void Introduction_of_this_program(); // í”„ë¡œê·¸ë¨ ì„¤ëª…
+int random(int range); // ë¬´ì‘ìœ„ ê°’ì„ ë‚´ëŠ” í•¨ìˆ˜
 #endif

@@ -1,15 +1,15 @@
 #pragma once
 
-// ¸ğµç ¼Ò½ºÄÚµå¿¡ ÀÌ Çì´õÆÄÀÏÀ» »ç¿ëÇÕ´Ï´Ù.
-// ¸ğµç ¼Ò½ºÄÚµåÀÇ Ã¹ ÁÙ¿¡ ÀÌ ÄÚµå¸¦ ³Ö¾î¾ß ÇÕ´Ï´Ù. -> #include "main_headfile.h"
-// ¸ğµç ¼Ò½ºÄÚµåÀÇ µÎ¹øÂ° ÁÙ¿¡ ÀÌÄÚµå¸¦ ³Ö¾î¾ß ÇÕ´Ï´Ù. -> #include "main_function.h"
-// ÇØ´õÆÄÀÏµéÀÇ include ¹®ÀÌ ¿©±â ÀÖ½À´Ï´Ù. 
+// ëª¨ë“  ì†ŒìŠ¤ì½”ë“œì— ì´ í—¤ë”íŒŒì¼ì„ ì‚¬ìš©í•©ë‹ˆë‹¤.
+// ëª¨ë“  ì†ŒìŠ¤ì½”ë“œì˜ ì²« ì¤„ì— ì´ ì½”ë“œë¥¼ ë„£ì–´ì•¼ í•©ë‹ˆë‹¤. -> #include "main_headfile.h"
+// ëª¨ë“  ì†ŒìŠ¤ì½”ë“œì˜ ë‘ë²ˆì§¸ ì¤„ì— ì´ì½”ë“œë¥¼ ë„£ì–´ì•¼ í•©ë‹ˆë‹¤. -> #include "main_function.h"
+// í•´ë”íŒŒì¼ë“¤ì˜ include ë¬¸ì´ ì—¬ê¸° ìˆìŠµë‹ˆë‹¤. 
 
 #ifndef __MAIN_HEADFILE_H_KGW__
 #define __MAIN_HEADFILE_H_KGW__
 
-#define _CRT_SECURE_NO_WARNINGS // vc2017¿¡¼­ scanf, printf ¸¦ warning ¾øÀÌ »ç¿ëÇÏµµ·Ï
-#include <cstdio> // Çì´õ ÆÄÀÏ ¼±¾ğ
+#define _CRT_SECURE_NO_WARNINGS // vc2017ì—ì„œ scanf, printf ë¥¼ warning ì—†ì´ ì‚¬ìš©í•˜ë„ë¡
+#include <cstdio> // í—¤ë” íŒŒì¼ ì„ ì–¸
 #include <cstring>
 #include <stdlib.h>
 #include <time.h>
@@ -18,6 +18,6 @@
 #include <windows.h>
 #include <mmsystem.h>
 #include <conio.h>
-#pragma comment(lib, "winmm.lib") // PlaySound() ÇÔ¼ö »ç¿ëÀ» À§ÇØ
+#pragma comment(lib, "winmm.lib") // PlaySound() í•¨ìˆ˜ ì‚¬ìš©ì„ ìœ„í•´
 
 #endif

@@ -1,9 +1,9 @@
-#include "main_headfile.h" //  Çì´õÆÄÀÏ ¼±¾ğ¹® Çì´õ ÆÄÀÏ
-#include "main_function.h" //  ÇÔ¼ö ¼±¾ğ¹® Çì´õ ÆÄÀÏ
+#include "main_headfile.h" //  í—¤ë”íŒŒì¼ ì„ ì–¸ë¬¸ í—¤ë” íŒŒì¼
+#include "main_function.h" //  í•¨ìˆ˜ ì„ ì–¸ë¬¸ í—¤ë” íŒŒì¼
 
-// ½ÃÀÛÈ­¸éÀÇ Ãâ·ÂÀ» ´ã´çÇÏ°í ÀÖ½À´Ï´Ù.(¶ó°í ¾²°í Ã³¸®±îÁö ´ã´çÇÑ´Ù°í ÀĞ½À´Ï´Ù.)
+// ì‹œì‘í™”ë©´ì˜ ì¶œë ¥ì„ ë‹´ë‹¹í•˜ê³  ìˆìŠµë‹ˆë‹¤.(ë¼ê³  ì“°ê³  ì²˜ë¦¬ê¹Œì§€ ë‹´ë‹¹í•œë‹¤ê³  ì½ìŠµë‹ˆë‹¤.)
 
-void clear_lines(int y, int strlength) { // y¹øÂ° ÁÙÀ» strlength ±æÀÌ¸¦ »èÁ¦
+void clear_lines(int y, int strlength) { // yë²ˆì§¸ ì¤„ì„ strlength ê¸¸ì´ë¥¼ ì‚­ì œ
 	int i;
 
 	gotoxy(0, y);
@@ -12,10 +12,10 @@ void clear_lines(int y, int strlength) { // y¹øÂ° ÁÙÀ» strlength ±æÀÌ¸¦ »èÁ¦
 	}
 }
 
-void print_start_screen() { // ½ÃÀÛ È­¸é Ãâ·Â
+void print_start_screen() { // ì‹œì‘ í™”ë©´ ì¶œë ¥
 
 	int i;
-	int space_x, space_y; // ¶ç¾î¾²±â °ø°£
+	int space_x, space_y; // ë„ì–´ì“°ê¸° ê³µê°„
 	space_x = 7;
 	space_y = 1;
 
@@ -23,35 +23,35 @@ void print_start_screen() { // ½ÃÀÛ È­¸é Ãâ·Â
 	{
 		system("cls");
 		for (i = 0; i < space_y; i++) printf("\n");
-		gotoxy(space_x * 2, space_y + 1); printf("¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à\n");
-		gotoxy(space_x * 2, space_y + 2); printf("  ¡ß¡ß¡ß¡ß¡ß¡ß  ¡ß              ¡ß¡ß¡ß¡ß¡ß¡ß  ¡ß\n");
-		gotoxy(space_x * 2, space_y + 3); printf("  ¡Ü            ¡Ü                  ¡Ü¡Ü      ¡Ü\n");
-		gotoxy(space_x * 2, space_y + 4); printf("  ¡Ü            ¡Ü                  ¡Ü¡Ü      ¡Ü\n");
-		gotoxy(space_x * 2, space_y + 5); printf("  ¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú  ¡Ú¡Ú¡Ú¡Ú¡Ú        ¡Ú    ¡Ú    ¡Ú¡Ú¡Ú¡Ú¡Ú\n");
-		gotoxy(space_x * 2, space_y + 6); printf("  ¡á            ¡á                ¡á    ¡á    ¡á\n");
-		gotoxy(space_x * 2, space_y + 7); printf("  ¡ß            ¡ß              ¡ß        ¡ß  ¡ß\n");
-		gotoxy(space_x * 2, space_y + 8); printf("  ¡Ü¡Ü¡Ü¡Ü¡Ü¡Ü  ¡Ü              ¡Ü        ¡Ü  ¡Ü\n");
-		gotoxy(space_x * 2, space_y + 9); printf("¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û\n");
-		gotoxy(space_x * 2, space_y + 10); printf("¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù¡Ù\n");
-		gotoxy(space_x * 2, space_y + 11); printf("¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à¡à\n");
-		gotoxy(space_x * 2, space_y + 12); printf("     ¡ß¡ß          ¡ß                ¡ß¡ß¡ß\n");
-		gotoxy(space_x * 2, space_y + 13); printf("    ¡Ü   ¡Ü    ¡Ü¡Ü¡Ü                ¡Ü  ¡Ü\n");
-		gotoxy(space_x * 2, space_y + 14); printf("  ¡Ü       ¡Ü      ¡Ü              ¡Ü      ¡Ü\n");
-		gotoxy(space_x * 2, space_y + 15); printf("  ¡Ú       ¡Ú      ¡Ú            ¡Ú          ¡Ú\n");
-		gotoxy(space_x * 2, space_y + 16); printf("    ¡á   ¡á    ¡á¡á¡á          ¡á              ¡á\n");
-		gotoxy(space_x * 2, space_y + 17); printf("     ¡ß¡ß          ¡ß        ¡Ü¡Ü¡Ü¡Ü¡Ü¡Ü¡Ü¡Ü¡Ü¡Ü¡Ü\n");
-		gotoxy(space_x * 2, space_y + 18); printf("                               ¡Ü              ¡Ü\n");
-		gotoxy(space_x * 2, space_y + 19); printf("    ¡Ü                         ¡Ú              ¡Ú\n");
-		gotoxy(space_x * 2, space_y + 20); printf("    ¡Ú                         ¡á¡á¡á¡á¡á¡á¡á¡á¡á\n");
-		gotoxy(space_x * 2, space_y + 21); printf("    ¡á                         ¡ß              ¡ß\n");
-		gotoxy(space_x * 2, space_y + 22); printf("    ¡ß¡ß¡ß¡ß¡ß¡ß¡ß¡ß           ¡Ü¡Ü¡Ü¡Ü¡Ü¡Ü¡Ü¡Ü¡Ü\n");
-		gotoxy(space_x * 2, space_y + 23); printf("¡İ¡İ¡İ¡İ¡İ¡İ¡İ¡İ¡İ¡İ¡İ¡İ¡İ¡İ¡İ¡İ¡İ¡İ¡İ¡İ¡İ¡İ¡İ¡İ¡İ¡İ¡İ¡İ¡İ\n");
-		gotoxy(space_x * 2, space_y + 24); printf("¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û¡Û\n");
+		gotoxy(space_x * 2, space_y + 1); printf("â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡\n");
+		gotoxy(space_x * 2, space_y + 2); printf("  â—†â—†â—†â—†â—†â—†  â—†              â—†â—†â—†â—†â—†â—†  â—†\n");
+		gotoxy(space_x * 2, space_y + 3); printf("  â—            â—                  â—â—      â—\n");
+		gotoxy(space_x * 2, space_y + 4); printf("  â—            â—                  â—â—      â—\n");
+		gotoxy(space_x * 2, space_y + 5); printf("  â˜…â˜…â˜…â˜…â˜…â˜…  â˜…â˜…â˜…â˜…â˜…        â˜…    â˜…    â˜…â˜…â˜…â˜…â˜…\n");
+		gotoxy(space_x * 2, space_y + 6); printf("  â–             â–                 â–     â–     â– \n");
+		gotoxy(space_x * 2, space_y + 7); printf("  â—†            â—†              â—†        â—†  â—†\n");
+		gotoxy(space_x * 2, space_y + 8); printf("  â—â—â—â—â—â—  â—              â—        â—  â—\n");
+		gotoxy(space_x * 2, space_y + 9); printf("â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹\n");
+		gotoxy(space_x * 2, space_y + 10); printf("â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†\n");
+		gotoxy(space_x * 2, space_y + 11); printf("â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡\n");
+		gotoxy(space_x * 2, space_y + 12); printf("     â—†â—†          â—†                â—†â—†â—†\n");
+		gotoxy(space_x * 2, space_y + 13); printf("    â—   â—    â—â—â—                â—  â—\n");
+		gotoxy(space_x * 2, space_y + 14); printf("  â—       â—      â—              â—      â—\n");
+		gotoxy(space_x * 2, space_y + 15); printf("  â˜…       â˜…      â˜…            â˜…          â˜…\n");
+		gotoxy(space_x * 2, space_y + 16); printf("    â–    â–     â– â– â–           â–               â– \n");
+		gotoxy(space_x * 2, space_y + 17); printf("     â—†â—†          â—†        â—â—â—â—â—â—â—â—â—â—â—\n");
+		gotoxy(space_x * 2, space_y + 18); printf("                               â—              â—\n");
+		gotoxy(space_x * 2, space_y + 19); printf("    â—                         â˜…              â˜…\n");
+		gotoxy(space_x * 2, space_y + 20); printf("    â˜…                         â– â– â– â– â– â– â– â– â– \n");
+		gotoxy(space_x * 2, space_y + 21); printf("    â–                          â—†              â—†\n");
+		gotoxy(space_x * 2, space_y + 22); printf("    â—†â—†â—†â—†â—†â—†â—†â—†           â—â—â—â—â—â—â—â—â—\n");
+		gotoxy(space_x * 2, space_y + 23); printf("â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—â—\n");
+		gotoxy(space_x * 2, space_y + 24); printf("â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹â—‹\n");
 		gotoxy(space_x * 2, space_y + 25); printf("              press any key to start program!\n");
 
 		for (i = 0; i < 24; i++) {
 			int time_now = time(NULL);
-			while (time(NULL) - time_now == 0 && !kbhit()); // 1ÃÊ°¡ Áö³ª°¡Áö ¾Ê°Å³ª Å°º¸µå°¡ ´­¸®Áö ¾Ê¾ÒÀ» ¶§ ±îÁö
+			while (time(NULL) - time_now == 0 && !kbhit()); // 1ì´ˆê°€ ì§€ë‚˜ê°€ì§€ ì•Šê±°ë‚˜ í‚¤ë³´ë“œê°€ ëˆŒë¦¬ì§€ ì•Šì•˜ì„ ë•Œ ê¹Œì§€
 			if (time(NULL) - time_now == 0) return;
 			clear_lines(i + space_y, 58 + space_x * 2);
 		}

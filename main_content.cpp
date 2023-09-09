@@ -1,156 +1,156 @@
-#include "main_headfile.h" //  Çì´õÆÄÀÏ ¼±¾ğ¹® Çì´õ ÆÄÀÏ
-#include "main_function.h" //  ÇÔ¼ö ¼±¾ğ¹® Çì´õ ÆÄÀÏ
+#include "main_headfile.h" //  í—¤ë”íŒŒì¼ ì„ ì–¸ë¬¸ í—¤ë” íŒŒì¼
+#include "main_function.h" //  í•¨ìˆ˜ ì„ ì–¸ë¬¸ í—¤ë” íŒŒì¼
 
-// ¸ŞÀÎÈ­¸é Ã³¸®¸¦ ´ã´çÇÏ´Â ÇÔ¼ö°¡ ¿©±â¿¡ ÀÖ½À´Ï´Ù.
+// ë©”ì¸í™”ë©´ ì²˜ë¦¬ë¥¼ ë‹´ë‹¹í•˜ëŠ” í•¨ìˆ˜ê°€ ì—¬ê¸°ì— ìˆìŠµë‹ˆë‹¤.
 int select_main() {
 	int loc = 1;
 	main_print(1);
 	while (1) {
-		int key_input = keyboard_input(); // Å°º¸µå ÀÔ·Â °ªÀ» ¹Ş´Â´Ù.
+		int key_input = keyboard_input(); // í‚¤ë³´ë“œ ì…ë ¥ ê°’ì„ ë°›ëŠ”ë‹¤.
 
-		if (key_input == 6) { // ¸Ş´ºÀÇ À§Ä¡¸¦  ¼±ÅÃÇÑ´Ù. -> ¿À¸¥ÂÊ Å°¸¦ ´­·¶À» ¶§
+		if (key_input == 6) { // ë©”ë‰´ì˜ ìœ„ì¹˜ë¥¼  ì„ íƒí•œë‹¤. -> ì˜¤ë¥¸ìª½ í‚¤ë¥¼ ëˆŒë €ì„ ë•Œ
 			if (loc == 3) loc = 1;
 			else loc++;
 		}
-		else if (key_input == 4) { // ¿ŞÂÊ Å°¸¦ ´­·¶À»¶§ 
+		else if (key_input == 4) { // ì™¼ìª½ í‚¤ë¥¼ ëˆŒë €ì„ë•Œ 
 			if (loc == 1) loc = 3;
 			else loc--;
 		}
-		else if (key_input == 0) { // ¿£ÅÍ Å°¸¦ ´­·¶À»¶§ ( ¸Ş´º¸¦ ¼±ÅÃÇßÀ» ¶§)
-			switch (loc) { // ÇöÀç ¼±ÅÃ ¸Ş´º ½ÇÇà
+		else if (key_input == 0) { // ì—”í„° í‚¤ë¥¼ ëˆŒë €ì„ë•Œ ( ë©”ë‰´ë¥¼ ì„ íƒí–ˆì„ ë•Œ)
+			switch (loc) { // í˜„ì¬ ì„ íƒ ë©”ë‰´ ì‹¤í–‰
 			case 1:
-				word_practice(); // ´Ü¾î ¿¬½À
+				word_practice(); // ë‹¨ì–´ ì—°ìŠµ
 				break;
 			case 2:
-				short_sentence_practice(); // ¹®Àå ¿¬½À
+				short_sentence_practice(); // ë¬¸ì¥ ì—°ìŠµ
 				break;
 			case 3:
-				Introduction_of_this_program(); // ÇÁ·Î±×·¥ ¼Ò°³
+				Introduction_of_this_program(); // í”„ë¡œê·¸ë¨ ì†Œê°œ
 				break;
 			default:
-				error(); //¿À·ù
+				error(); //ì˜¤ë¥˜
 			}
 		}
-		main_print(loc); // ¸ğµç ÀÏÀÌ ÁøÇà µÈ ÈÄ¿¡´Â ´Ù½Ã ¸ŞÀÎ È­¸é Ãâ·Â
-		Sleep(500); // ¾øÀ¸¸é ¹Î°¨µµ°¡ ³ô¾ÆÁü
+		main_print(loc); // ëª¨ë“  ì¼ì´ ì§„í–‰ ëœ í›„ì—ëŠ” ë‹¤ì‹œ ë©”ì¸ í™”ë©´ ì¶œë ¥
+		Sleep(500); // ì—†ìœ¼ë©´ ë¯¼ê°ë„ê°€ ë†’ì•„ì§
 	}
 }
 
-void word_practice() { // ´Ü¾î ¿¬½À
+void word_practice() { // ë‹¨ì–´ ì—°ìŠµ
 	system("cls");
-	PlaySound(TEXT("data/song/main_bgm2.wav"), NULL, SND_ASYNC | SND_LOOP); // main_bgm2.wav ³ë·¡ Æ²±â
-	int wordn, randomn, correct = 0, i; // wordn = ÆÄÀÏÀÇ ´Ü¾î °³¼ö, correct = ¿¬½À Áß ¸ÂÀº °³¼ö, randomn = ¹«ÀÛÀ§ ³­¼ö, i = ¹İº¹¹®ÀÇ i
-	double accuracy = 0; // Á¤È®µµ
-	FILE *wordinput = fopen("data/file/word_practice.dat", "rt"); // ÀĞ±â ¸ğµå·Î ÆÄÀÏ ¿­±â
-	if (wordinput == NULL) error(); // ÆÄÀÏÀÌ ¾ø´Ù¸é ¿À·ù!
-	fscanf(wordinput, "%d", &wordn); // ´Ü¾î °³¼ö ½ºÄµ ¹Ş°í
-	char word[3005][12], now[12]; // word = ÆÄÀÏ¿¡ ÀúÀåµÈ ¸ğµç ´Ü¾î, now = ÇöÀç ÀÔ·ÂÇØ¾ß ÇÒ ´Ü¾î
+	PlaySound(TEXT("data/song/main_bgm2.wav"), NULL, SND_ASYNC | SND_LOOP); // main_bgm2.wav ë…¸ë˜ í‹€ê¸°
+	int wordn, randomn, correct = 0, i; // wordn = íŒŒì¼ì˜ ë‹¨ì–´ ê°œìˆ˜, correct = ì—°ìŠµ ì¤‘ ë§ì€ ê°œìˆ˜, randomn = ë¬´ì‘ìœ„ ë‚œìˆ˜, i = ë°˜ë³µë¬¸ì˜ i
+	double accuracy = 0; // ì •í™•ë„
+	FILE *wordinput = fopen("data/file/word_practice.dat", "rt"); // ì½ê¸° ëª¨ë“œë¡œ íŒŒì¼ ì—´ê¸°
+	if (wordinput == NULL) error(); // íŒŒì¼ì´ ì—†ë‹¤ë©´ ì˜¤ë¥˜!
+	fscanf(wordinput, "%d", &wordn); // ë‹¨ì–´ ê°œìˆ˜ ìŠ¤ìº” ë°›ê³ 
+	char word[3005][12], now[12]; // word = íŒŒì¼ì— ì €ì¥ëœ ëª¨ë“  ë‹¨ì–´, now = í˜„ì¬ ì…ë ¥í•´ì•¼ í•  ë‹¨ì–´
 
-	for (int i = 0; i < wordn; i++) { // ´Ü¾îÀÇ °³¼ö ¸¸Å­
-		fscanf(wordinput, "%s", word[i]); // ´Ü¾î Èí¼ö
+	for (int i = 0; i < wordn; i++) { // ë‹¨ì–´ì˜ ê°œìˆ˜ ë§Œí¼
+		fscanf(wordinput, "%s", word[i]); // ë‹¨ì–´ í¡ìˆ˜
 	}
 
-	fclose(wordinput); // ½ºÆ®¸² ´İ±â
+	fclose(wordinput); // ìŠ¤íŠ¸ë¦¼ ë‹«ê¸°
 
-	time_t time_now = time(NULL); //½Ã°£ ÃøÁ¤
+	time_t time_now = time(NULL); //ì‹œê°„ ì¸¡ì •
 	for (i = 1; i <= 20; i++) {
-		randomn = random(wordn - 5); // ¹«ÀÛÀ§ ³­¼ö¸¦ Á¤ÇÑ´Ù.
+		randomn = random(wordn - 5); // ë¬´ì‘ìœ„ ë‚œìˆ˜ë¥¼ ì •í•œë‹¤.
 		system("cls");
-		printf("-------------------- Á¤È®µµ : %.1f%% ------------------- ÁøÇà·ü : %d%% ------------------\n", accuracy, 5 * (i - 1)); // Ãâ·Â È­¸é
-		printf("\n\n                                      Áö±İ Ä¡½Ç ´Ü¾î \n");
+		printf("-------------------- ì •í™•ë„ : %.1f%% ------------------- ì§„í–‰ë¥  : %d%% ------------------\n", accuracy, 5 * (i - 1)); // ì¶œë ¥ í™”ë©´
+		printf("\n\n                                      ì§€ê¸ˆ ì¹˜ì‹¤ ë‹¨ì–´ \n");
 		printf("\n\n------------------------------[                           ]------------------------------\n");
 		printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-		printf("                                    Áö±İ ÀÔ·ÂÇÏ½Å ´Ü¾î\n");
+		printf("                                    ì§€ê¸ˆ ì…ë ¥í•˜ì‹  ë‹¨ì–´\n");
 		printf("\n\n------------------------------[                           ]------------------------------\n\n\n");
 		gotoxy(40, 6);
 		printf("%s", word[randomn]);
 		gotoxy(40, 26);
-		CursorView(1); // Ä¿¼­ º¸ÀÌ±â
-		scanf("%s", now); // ´Ü¾î ÀÔ·Â
-		CursorView(0); // Ä¿¼­ ¼û±â±â
-		if (!strcmp(now, word[randomn])) correct += 1; // ¸ÂÀ¸¸é correct ¿¡ 1Ãß°¡
-		accuracy = (double)((double)correct / (double)i) * 100; // Á¤È®µµ °è»ê
+		CursorView(1); // ì»¤ì„œ ë³´ì´ê¸°
+		scanf("%s", now); // ë‹¨ì–´ ì…ë ¥
+		CursorView(0); // ì»¤ì„œ ìˆ¨ê¸°ê¸°
+		if (!strcmp(now, word[randomn])) correct += 1; // ë§ìœ¼ë©´ correct ì— 1ì¶”ê°€
+		accuracy = (double)((double)correct / (double)i) * 100; // ì •í™•ë„ ê³„ì‚°
 	}
-	time_now = time(NULL) - time_now; //½Ã°£ ÃøÁ¤
+	time_now = time(NULL) - time_now; //ì‹œê°„ ì¸¡ì •
 
 	system("cls");
 	gotoxy(0, 0);
-	printf("                         ---   ³¹¸» ¿¬½ÀÀÌ ¿Ï·á µÇ¾ú½À´Ï´Ù.   ---\n");
-	printf("                              ---   Á¤´äÀÇ °³¼ö : %d°³   ---\n", correct);
-	printf("                                ---   Á¤È®µµ : %.1f%%   ---\n", accuracy);
-	printf("                              ---   Áö³­ ½Ã°£ : %lldÃÊ   ---\n", time_now);
-	printf("                            6ÃÊ ÈÄ ¸Ş´º ¼±ÅÃÈ­¸éÀ¸·Î ÀÌµ¿µË´Ï´Ù.\n ");
+	printf("                         ---   ë‚±ë§ ì—°ìŠµì´ ì™„ë£Œ ë˜ì—ˆìŠµë‹ˆë‹¤.   ---\n");
+	printf("                              ---   ì •ë‹µì˜ ê°œìˆ˜ : %dê°œ   ---\n", correct);
+	printf("                                ---   ì •í™•ë„ : %.1f%%   ---\n", accuracy);
+	printf("                              ---   ì§€ë‚œ ì‹œê°„ : %lldì´ˆ   ---\n", time_now);
+	printf("                            6ì´ˆ í›„ ë©”ë‰´ ì„ íƒí™”ë©´ìœ¼ë¡œ ì´ë™ë©ë‹ˆë‹¤.\n ");
 	Sleep(6000);
 
-	if (i != 21) error(); // ¹İº¹¹®ÀÇ °ªÀÌ 20¹ø ¹İº¹µÇÁö ¾ÊÀ¸¸é ¿À·ù!
-	PlaySound(TEXT("data/song/main_bgm1.wav"), NULL, SND_ASYNC | SND_LOOP); //main_bgm1.wav Æ²±â
+	if (i != 21) error(); // ë°˜ë³µë¬¸ì˜ ê°’ì´ 20ë²ˆ ë°˜ë³µë˜ì§€ ì•Šìœ¼ë©´ ì˜¤ë¥˜!
+	PlaySound(TEXT("data/song/main_bgm1.wav"), NULL, SND_ASYNC | SND_LOOP); //main_bgm1.wav í‹€ê¸°
 }
 
 void short_sentence_practice() {
 	system("cls");
-	PlaySound(TEXT("data/song/main_bgm2.wav"), NULL, SND_ASYNC | SND_LOOP); // main_bgm2.wav ³ë·¡ Æ²±â 
-	int wordn = 1261, correct = 0, randomn, i; // wordn = ÆÄÀÏÀÇ ´Ü¾î °³¼ö, correct = ¿¬½À Áß ¸ÂÀº °³¼ö, randomn = ¹«ÀÛÀ§ ³­¼ö, i = ¹İº¹¹®ÀÇ i
+	PlaySound(TEXT("data/song/main_bgm2.wav"), NULL, SND_ASYNC | SND_LOOP); // main_bgm2.wav ë…¸ë˜ í‹€ê¸° 
+	int wordn = 1261, correct = 0, randomn, i; // wordn = íŒŒì¼ì˜ ë‹¨ì–´ ê°œìˆ˜, correct = ì—°ìŠµ ì¤‘ ë§ì€ ê°œìˆ˜, randomn = ë¬´ì‘ìœ„ ë‚œìˆ˜, i = ë°˜ë³µë¬¸ì˜ i
 	double accuracy;
-	char word[3005][100], now[100]; // word = ÆÄÀÏ¿¡ ÀúÀåµÈ ¸ğµç ¹®Àå, now = ÇöÀç ÀÔ·ÂÇØ¾ß ÇÒ ¹®Àå
-	FILE *sentenceinput = fopen("data/file/sentence_practice.dat", "rt"); // ÀÏ±â ¸ğµå·Î ÆÄÀÏ ¿­±â
+	char word[3005][100], now[100]; // word = íŒŒì¼ì— ì €ì¥ëœ ëª¨ë“  ë¬¸ì¥, now = í˜„ì¬ ì…ë ¥í•´ì•¼ í•  ë¬¸ì¥
+	FILE *sentenceinput = fopen("data/file/sentence_practice.dat", "rt"); // ì¼ê¸° ëª¨ë“œë¡œ íŒŒì¼ ì—´ê¸°
 
-	if (sentenceinput == NULL) error(); // ÆÄÀÏÀÌ ¾ø´Ù¸é ¿À·ù ¹ß»ı
+	if (sentenceinput == NULL) error(); // íŒŒì¼ì´ ì—†ë‹¤ë©´ ì˜¤ë¥˜ ë°œìƒ
 
-	for (int i = 0; i < wordn; i++) { // ÀÔ·Â ¹Ş°í
+	for (int i = 0; i < wordn; i++) { // ì…ë ¥ ë°›ê³ 
 		fgets(word[i], sizeof(word[i]), sentenceinput);
 	}
-	fclose(sentenceinput); // ÆÄÀÏ ÀÔ·Â ´İ±â
+	fclose(sentenceinput); // íŒŒì¼ ì…ë ¥ ë‹«ê¸°
 
 
 	accuracy = 0;
-	time_t time_now = time(NULL); //½Ã°£ ÃøÁ¤
+	time_t time_now = time(NULL); //ì‹œê°„ ì¸¡ì •
 	for (i = 1; i <= 10; i++) {
-		randomn = random(wordn - 5); // ³­¼ö ¼³Á¤
+		randomn = random(wordn - 5); // ë‚œìˆ˜ ì„¤ì •
 		system("cls");
-		printf("-------------------- Á¤È®µµ : %.1f%% ------------------- ÁøÇà·ü : %d%% ------------------\n", accuracy, 10 * (i - 1));
-		printf("\n\n                               Áö±İ  ÀÔ·ÂÇÏ¼Å¾ß ÇÏ½Ç ¹®Àå\n");
+		printf("-------------------- ì •í™•ë„ : %.1f%% ------------------- ì§„í–‰ë¥  : %d%% ------------------\n", accuracy, 10 * (i - 1));
+		printf("\n\n                               ì§€ê¸ˆ  ì…ë ¥í•˜ì…”ì•¼ í•˜ì‹¤ ë¬¸ì¥\n");
 		printf("\n\n-[                                                                                     ]-\n");
 		printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-		printf("                                    Áö±İ ÀÔ·ÂÇÏ½Å ¹®Àå\n");
+		printf("                                    ì§€ê¸ˆ ì…ë ¥í•˜ì‹  ë¬¸ì¥\n");
 		printf("\n\n-[                                                                                     ]-\n\n\n");
 		gotoxy(12, 6);
 		printf("%s", word[randomn]);
 		gotoxy(12, 26);
-		CursorView(1); // Ä¿¼­ º¸ÀÌ±â
-		fgets(now, sizeof(now), stdin); // ÀÔ·ÂÇÑ ÇÑÁÙÀ» ¿ÏÀüÈ÷ ¹Ş´Â´Ù. (fgets : ÇÑ±Û - 50ÀÚ¸¸ ¹Şµµ·Ï ¼³Á¤)
-		CursorView(0); // Ä¿¼­ ¼û±â±â
-		if (!strcmp(now, word[randomn])) correct += 1; // ¸Â´Ù¸é correct 1 Ãß°¡
-		accuracy = (double)((double)correct / (double)i) * 100; // Á¤È®µµ °è»ê
+		CursorView(1); // ì»¤ì„œ ë³´ì´ê¸°
+		fgets(now, sizeof(now), stdin); // ì…ë ¥í•œ í•œì¤„ì„ ì™„ì „íˆ ë°›ëŠ”ë‹¤. (fgets : í•œê¸€ - 50ìë§Œ ë°›ë„ë¡ ì„¤ì •)
+		CursorView(0); // ì»¤ì„œ ìˆ¨ê¸°ê¸°
+		if (!strcmp(now, word[randomn])) correct += 1; // ë§ë‹¤ë©´ correct 1 ì¶”ê°€
+		accuracy = (double)((double)correct / (double)i) * 100; // ì •í™•ë„ ê³„ì‚°
 	}
-	time_now = time(NULL) - time_now; //½Ã°£ ÃøÁ¤
+	time_now = time(NULL) - time_now; //ì‹œê°„ ì¸¡ì •
 	system("cls");
 	gotoxy(0, 0);
-	printf("                         ---   ¹®Àå ¿¬½ÀÀÌ ¿Ï·á µÇ¾ú½À´Ï´Ù.   ---\n");
-	printf("                              ---   Á¤´äÀÇ °³¼ö : %d°³   ---\n", correct);
-	printf("                                ---   Á¤È®µµ : %.1f%%   ---\n", accuracy);
-	printf("                              ---   Áö³­ ½Ã°£ : %lldÃÊ   ---\n", time_now);
-	printf("                            6ÃÊ ÈÄ ¸Ş´º ¼±ÅÃÈ­¸éÀ¸·Î ÀÌµ¿µË´Ï´Ù.\n ");
+	printf("                         ---   ë¬¸ì¥ ì—°ìŠµì´ ì™„ë£Œ ë˜ì—ˆìŠµë‹ˆë‹¤.   ---\n");
+	printf("                              ---   ì •ë‹µì˜ ê°œìˆ˜ : %dê°œ   ---\n", correct);
+	printf("                                ---   ì •í™•ë„ : %.1f%%   ---\n", accuracy);
+	printf("                              ---   ì§€ë‚œ ì‹œê°„ : %lldì´ˆ   ---\n", time_now);
+	printf("                            6ì´ˆ í›„ ë©”ë‰´ ì„ íƒí™”ë©´ìœ¼ë¡œ ì´ë™ë©ë‹ˆë‹¤.\n ");
 	Sleep(6000);
-	if (i != 11) error(); // ¹İº¹À» 10¹ø ÇÏÁö ¾ÊÀ¸¸é ¿À·ù!¸Ï
-	PlaySound(TEXT("data/song/main_bgm1.wav"), NULL, SND_ASYNC | SND_LOOP); // main_bgm1.wav Æ²±â
+	if (i != 11) error(); // ë°˜ë³µì„ 10ë²ˆ í•˜ì§€ ì•Šìœ¼ë©´ ì˜¤ë¥˜!ë¨€
+	PlaySound(TEXT("data/song/main_bgm1.wav"), NULL, SND_ASYNC | SND_LOOP); // main_bgm1.wav í‹€ê¸°
 }
 
-void Introduction_of_this_program() { // ÇÁ·Î±×·¥ ¼³¸í 
-	PlaySound(TEXT("data/song/main_bgm2.wav"), NULL, SND_ASYNC | SND_LOOP); // main_bgm2.wav Æ²±â
+void Introduction_of_this_program() { // í”„ë¡œê·¸ë¨ ì„¤ëª… 
+	PlaySound(TEXT("data/song/main_bgm2.wav"), NULL, SND_ASYNC | SND_LOOP); // main_bgm2.wav í‹€ê¸°
 	system("cls");
-	printf("¾È³çÇÏ¼¼¿ä. °³¹ßÀÚ ±è°Ç¿ìÀÔ´Ï´Ù.\n");
+	printf("ì•ˆë…•í•˜ì„¸ìš”. ê°œë°œì ê¹€ê±´ìš°ì…ë‹ˆë‹¤.\n");
 	Sleep(700);
-	printf("ÀÌ ÇÁ·Î±×·¥Àº ´ëÀü Á¤º¸¿µÀç ÃÊ±Ş °³ÀÎÁÖÁ¦ ¹ßÇ¥´ëÈ¸¿ë ÇÁ·Î±×·¥ ÀÔ´Ï´Ù.\n");
+	printf("ì´ í”„ë¡œê·¸ë¨ì€ ëŒ€ì „ ì •ë³´ì˜ì¬ ì´ˆê¸‰ ê°œì¸ì£¼ì œ ë°œí‘œëŒ€íšŒìš© í”„ë¡œê·¸ë¨ ì…ë‹ˆë‹¤.\n");
 	Sleep(700);
-	printf("ÀÌ ÇÁ·Î±×·¥Àº ´Ü¼ø¸í·áÇÑ Å¸ÀÚ¿¬½À ÇÁ·Î±×·¥ÀÔ´Ï´Ù. \n");
+	printf("ì´ í”„ë¡œê·¸ë¨ì€ ë‹¨ìˆœëª…ë£Œí•œ íƒ€ìì—°ìŠµ í”„ë¡œê·¸ë¨ì…ë‹ˆë‹¤. \n");
 	Sleep(700);
-	printf("ÀÌ ÇÁ·Î±×·¥ÀÇ »ç¿ë¹ı°ú ¼³¸í¿¡ ´ëÇÑ ´õ ÀÚ¼¼ÇÑ Á¤º¸¸¦\n");
+	printf("ì´ í”„ë¡œê·¸ë¨ì˜ ì‚¬ìš©ë²•ê³¼ ì„¤ëª…ì— ëŒ€í•œ ë” ìì„¸í•œ ì •ë³´ë¥¼\n");
 	Sleep(700);
-	printf("¾Ë°í ½ÍÀ¸½Ã¸é ´Ü¼ø¸í·áÇÑ Å¸ÀÚ¿¬½À ÇÁ·Î±×·¥ »çÀÌÆ®·Î ¿À½Ê½Ã¿À.\n");
+	printf("ì•Œê³  ì‹¶ìœ¼ì‹œë©´ ë‹¨ìˆœëª…ë£Œí•œ íƒ€ìì—°ìŠµ í”„ë¡œê·¸ë¨ ì‚¬ì´íŠ¸ë¡œ ì˜¤ì‹­ì‹œì˜¤.\n");
 	Sleep(700);
-	printf("´Ü¼ø¸í·áÇÑ Å¸ÀÚ¿¬½À ÇÁ·Î±×·¥ »çÀÌÆ® : kgw2007.cf\n");
+	printf("ë‹¨ìˆœëª…ë£Œí•œ íƒ€ìì—°ìŠµ í”„ë¡œê·¸ë¨ ì‚¬ì´íŠ¸ : kgw2007.cf\n");
 	Sleep(700);
-	printf("ÀÌ ±ÛÀº 15ÃÊ ÈÄ¿¡ Áö¿öÁö°í ¸ŞÀÎÈ­¸éÀ¸·Î ÀÌµ¿ÇÕ´Ï´Ù.\n");
+	printf("ì´ ê¸€ì€ 15ì´ˆ í›„ì— ì§€ì›Œì§€ê³  ë©”ì¸í™”ë©´ìœ¼ë¡œ ì´ë™í•©ë‹ˆë‹¤.\n");
 	Sleep(15000);
-	PlaySound(TEXT("data/song/main_bgm1.wav"), NULL, SND_ASYNC | SND_LOOP); // ¼³¸íÈÄ main_bgm1.wav Æ²±â
+	PlaySound(TEXT("data/song/main_bgm1.wav"), NULL, SND_ASYNC | SND_LOOP); // ì„¤ëª…í›„ main_bgm1.wav í‹€ê¸°
 }

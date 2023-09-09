@@ -1,28 +1,28 @@
-/* KOR - instruction // ÇÑ±¹¾î ¼³¸í
-// ¸ğµç ¼Ò½ºÄÚµåÀÇ Áß½ÉÀÌ µÇ´Â ¼Ò½ºÄÚµåÀÔ´Ï´Ù.
-// ÃÖÁ¾ ¼öÁ¤ ³¯Â¥ : 2018.09.23  /// °³¹ßÀÚ : gunwoo7
-// ÀÌ ÇÁ·Î±×·¥Àº Github¸¦ »ç¿ëÇÏ¿© °ü¸®µË´Ï´Ù. (¹öÀü °ü¸®¸¦ À§ÇØ¼­)
-// main.cpp¿¡¸¸ ¿µ¾î ¸Å´º¾óÀÌ ÀÖ½À´Ï´Ù (ÃßÈÄ Ãß°¡ µÉ ¿¹Á¤ÀÔ´Ï´Ù)
+/* KOR - instruction // í•œêµ­ì–´ ì„¤ëª…
+// ëª¨ë“  ì†ŒìŠ¤ì½”ë“œì˜ ì¤‘ì‹¬ì´ ë˜ëŠ” ì†ŒìŠ¤ì½”ë“œì…ë‹ˆë‹¤.
+// ìµœì¢… ìˆ˜ì • ë‚ ì§œ : 2018.09.23  /// ê°œë°œì : gunwoo7
+// ì´ í”„ë¡œê·¸ë¨ì€ Githubë¥¼ ì‚¬ìš©í•˜ì—¬ ê´€ë¦¬ë©ë‹ˆë‹¤. (ë²„ì „ ê´€ë¦¬ë¥¼ ìœ„í•´ì„œ)
+// main.cppì—ë§Œ ì˜ì–´ ë§¤ë‰´ì–¼ì´ ìˆìŠµë‹ˆë‹¤ (ì¶”í›„ ì¶”ê°€ ë  ì˜ˆì •ì…ë‹ˆë‹¤)
 */
 
-/* ENG - instruction // ¿µ¾î ¼³¸í
+/* ENG - instruction // ì˜ì–´ ì„¤ëª…
 // It's the source code that is the center of all the source codes.
 // Date of last modification: 2018.09.23 /// Developer : gunwoo7
 // This program is managed using Github. (for version management)
 // This is the only English manual (It will be added later)
 */
 
-#include "main_headfile.h" //  Çì´õÆÄÀÏ ¼±¾ğ¹® Çì´õ ÆÄÀÏ
-#include "main_function.h" //  ÇÔ¼ö ¼±¾ğ¹® Çì´õ ÆÄÀÏ
+#include "main_headfile.h" //  í—¤ë”íŒŒì¼ ì„ ì–¸ë¬¸ í—¤ë” íŒŒì¼
+#include "main_function.h" //  í•¨ìˆ˜ ì„ ì–¸ë¬¸ í—¤ë” íŒŒì¼
 
 int main() {
-	// Ã³À½ ½ÃÀÛÀÌ¶ø´Ï´Ù.
-	system("mode con: lines=31 cols=90"); // ÄÜ¼Ö »çÀÌÁî ¸ÂÃß±â
-	system("title typing_program"); // ÄÜ¼ÖÀÇ ÀÌ¸§ Á¤ÇÏ±â
-	CursorView(0); // Ä¿¼­¸¦ ¼û±ä´Ù.
-	PlaySound(TEXT("data/song/main_bgm1.wav"), NULL, SND_ASYNC | SND_LOOP);// ¹è°æÀ½¾Ç
-	print_start_screen(); // ÃÊ±â È­¸é Ãâ·Â
+	// ì²˜ìŒ ì‹œì‘ì´ëë‹ˆë‹¤.
+	system("mode con: lines=31 cols=90"); // ì½˜ì†” ì‚¬ì´ì¦ˆ ë§ì¶”ê¸°
+	system("title typing_program"); // ì½˜ì†”ì˜ ì´ë¦„ ì •í•˜ê¸°
+	CursorView(0); // ì»¤ì„œë¥¼ ìˆ¨ê¸´ë‹¤.
+	PlaySound(TEXT("data/song/main_bgm1.wav"), NULL, SND_ASYNC | SND_LOOP);// ë°°ê²½ìŒì•…
+	print_start_screen(); // ì´ˆê¸° í™”ë©´ ì¶œë ¥
 	system("cls");
-	select_main(); // ¸ŞÀÎ È­¸é ÀÌµ¿
-	return -1; // ºñ Á¤»óÀû Á¾·á(¹«ÇÑ ¹İº¹¹® Å»Ãâ »óÈ²)
+	select_main(); // ë©”ì¸ í™”ë©´ ì´ë™
+	return -1; // ë¹„ ì •ìƒì  ì¢…ë£Œ(ë¬´í•œ ë°˜ë³µë¬¸ íƒˆì¶œ ìƒí™©)
 }
